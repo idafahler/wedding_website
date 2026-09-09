@@ -1,3 +1,7 @@
+:root {
+    --light-green: #edf2ea;
+}
+
 html {
   font-size: 14px;
 }
@@ -19,6 +23,10 @@ html {
 
 body {
   margin-bottom: 60px;
+
+  background-image: url('../images/flower-background-cropped.jpg');
+  background-repeat: repeat;
+  background-size: 450px auto;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -28,4 +36,66 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+.wedding-nav {
+    background-color: var(--light-green);
+}
+
+.nav-img{
+    width: 50px;
+    margin-right: 10px;
+}
+
+footer{
+    background-color: var(--light-green);
+}
+
+.header-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #37512e;
+}
+
+.image-banner{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:2rem;
+    margin: 2rem 0;
+
+    .banner-picture{
+        width:70px;
+    }
+}
+
+h1{
+    font-family: 'Great Vibes', cursive;
+}
+
+h2, h3, h4, .text-under-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+.text-under-title{
+    font-size: 1.3rem;
+}
+
+.section-background {
+    background-color: var(--light-green);
+    padding: 4rem 0;
+}
+
+.text-section{
+    margin: 2rem 5rem;
+}
+
+form{
+    margin: 2rem 0 0 0;
+}
+
+.rsvp-button {
+    background-color: #9daa98;
+    padding: 0.2rem 1rem;
 }

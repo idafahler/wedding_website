@@ -1,3 +1,5 @@
+using wedding_website.Services;
+
 namespace wedding_website
 {
     public class Program
@@ -6,16 +8,15 @@ namespace wedding_website
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddSingleton<IGuestService, GuestService>(); //Singleton, one single instance for the applications lifetime. List is not emptied every request
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

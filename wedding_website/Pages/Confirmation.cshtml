@@ -1,0 +1,17 @@
+﻿@page "{id:int}"
+@model wedding_website.Pages.ConfirmationModel
+@{
+}
+
+<section class="section-background text-center">
+    <h1>Confirmation</h1>
+
+    <h3>You have sent the request</h3>
+
+    <h4>Your information</h4>
+
+    <p>Name: @Model.Guest.FullName</p>
+    <p>Email: @Model.Guest.Email</p>
+    <p>Attending: @Model.Guest.Attendance</p>
+    <p>Optional message: @Model.Guest.Message</p>
+</section>

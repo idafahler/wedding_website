@@ -3,12 +3,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace wedding_website.Pages
 {
-    public class IndexModel : PageModel
+    public class EventModel : PageModel
     {
-
         public void OnGet()
         {
-
         }
     }
 }
