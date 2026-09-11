@@ -1,5 +1,10 @@
 :root {
     --light-green: #edf2ea;
+    --darker-green: #9daa98;
+    --text-green: #37512e;
+    --shadow-section: rgba(0,0,0,0.3);
+    --link: #304936;
+    --link-hover: #406048;
 }
 
 html {
@@ -47,14 +52,16 @@ body {
     margin-right: 10px;
 }
 
-footer{
-    background-color: var(--light-green);
-}
-
 .header-title {
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
-    color: #37512e;
+    color: var(--text-green);
+}
+
+.hero-image{
+    max-width: 50rem;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .image-banner{
@@ -65,12 +72,14 @@ footer{
     margin: 2rem 0;
 
     .banner-picture{
-        width:70px;
+        max-width:70px;
+        width:100%;
     }
 }
 
 h1{
     font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
 }
 
 h2, h3, h4, .text-under-title{
@@ -84,11 +93,15 @@ h2, h3, h4, .text-under-title{
 
 .section-background {
     background-color: var(--light-green);
-    padding: 4rem 0;
+    padding: 4rem 1.5rem;
+    margin: 4rem 0;
+    border-radius: 12px;
+    border: 1px solid rgba(129,160,91,0.3);
+    box-shadow: 0 4px 20px var(--shadow-section);
 }
 
 .text-section{
-    margin: 2rem 5rem;
+    margin: 3rem 5rem;
 }
 
 form{
@@ -96,6 +109,59 @@ form{
 }
 
 .rsvp-button {
-    background-color: #9daa98;
+    background-color: var(--darker-green);
     padding: 0.2rem 1rem;
 }
+
+.link-in-text{
+    color: var(--link);
+}
+
+.link-in-text:hover{
+    color: var(--link-hover);
+}
+.link-in-text:visited{
+    color: var(--link-hover);
+}
+
+.optional-message-guest{
+    overflow-wrap: break-word;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:1rem;
+    padding: 3rem 0;
+}
+.gallery-image{
+    width:100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius:8px;
+}
+
+.footer {
+    background-color: var(--light-green);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 576px) {
+    .image-banner {
+        display: none;
+    }
+
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -6,31 +6,54 @@
 
 <section class="section-background text-center">
     <h1>Jane & Joe's forever begins</h1>
-    <div class="text-section">
-        <p class="text-under-title">Saturday, June 20, 2027</p>
+    <article class="text-section">
+        <p class="text-under-title">@Model.Ceremony.StartTime.ToString("dddd, MMMM d, yyyy")</p>
         <p>
             We are delighted to invite you to celebrate the wedding of Jane and Joe.<br />
             Join us for a beautiful day filled with love, laughter, good food, music, and wonderful memories.
         </p>
+    </article>
+    <article class="text-section">
         <h3>The ceremony</h3>
         <p>
-            <strong>Time:</strong> 3:00 PM<br />
-            <strong>Location:</strong> Rosewood Estate<br />
-            <strong>Address:</strong> 18 Willow Lane, Hampshire, England<br />
+            <strong>Time:</strong> @Model.Ceremony.StartTime.ToString("h:mm tt")<br />
+            <strong>Location:</strong> @Model.Ceremony.Location<br />
+            <strong>Address:</strong> @Model.Ceremony.Address<br />
             The ceremony will take place outdoors in the estate's beautiful garden, surrounded by flowers and old oak trees. <br />
             Guests are kindly asked to arrive at least 30 minutes before the ceremony begins.
         </p>
+    </article>
+
+    <article class="text-section">
         <h3>The reception</h3>
         <p>
             Following the ceremony, we will continue the celebrations with drinks, dinner, speeches,
             and dancing in the main hall at Rosewood Estate.<br />
-            <strong>Reception begins:</strong> 4:30 PM <br />
-            <strong>Dinner:</strong> 6:00 PM <br />
-            <strong>First dance:</strong> 8:30 PM <br />
-            <strong>Celebrations:</strong> Until late <br />
+
+            @foreach(var e in Model.Events.Skip(1))
+            {
+                <strong>@e.Title:</strong> @e.StartTime.ToString("h:mm tt")
+
+                <br />
+            }
+            <strong>Celebrations: </strong> Until late <br />
             There will be plenty of time throughout the afternoon and evening to relax, enjoy a drink, take photographs, and celebrate together.
         </p>
+    </article>
 
+
+    <article class="text-section">
+        <h3>RSVP</h3>
+        <p>
+            Please let us know if you are able to join us by <strong>April 1, 2027.</strong><br />
+
+            When responding, please include any dietary requirements, and whether you require transportation from one of the recommended hotels.<br />
+
+            We hope you can celebrate with us!
+        </p>
+    </article>
+
+    <article class="text-section">
         <h3>Dress code</h3>
         <p>
             <strong>Garden formal</strong><br />
@@ -41,7 +64,9 @@
 
             Most importantly, wear something that makes you feel wonderful!
         </p>
+    </article>
 
+    <article class="text-section">
         <h3>Where to stay</h3>
         <p>
             For guests travelling from out of town, there are several hotels and charming bed & breakfasts within a short drive of the venue.<br />
@@ -51,7 +76,9 @@
             A shuttle service will be available between selected accommodation locations and Rosewood Estate before and after the wedding, 
             so guests can enjoy the evening without worrying about driving.
         </p>
+    </article>
 
+    <article class="text-section">
         <h3>Gifts</h3>
         <p>
             Having you with us on our wedding day is the greatest gift we could ask for.<br />
@@ -61,7 +88,9 @@
 
             Your love and presence mean more to us than anything else.
         </p>
+    </article>
 
+    <article class="text-section">
         <h3>Photography</h3>
         <p>
             We want everyone to feel free to enjoy the day, so we have a wonderful photographer capturing all the important moments.<br />
@@ -71,17 +100,8 @@
 
             After the ceremony, we'll have plenty of opportunities for photos with family and friends.<br />
 
-            A private online photo gallery will be shared after the wedding, where you will be able to see and download the professional photographs.
+            The <a asp-page="/Gallery" class="link-in-text">photo gallery</a> will be filled with photos after the wedding.
         </p>
-
-        <h3>RSVP</h3>
-        <p>
-            Please let us know if you are able to join us by April 1, 2027.<br />
-
-            When responding, please include any dietary requirements, and whether you require transportation from one of the recommended hotels.<br />
-
-            We hope you can celebrate with us!
-        </p>
-    </div>
+    </article>
 
 </section>

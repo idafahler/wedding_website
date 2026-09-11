@@ -1,3 +1,4 @@
+using System.Globalization;
 using wedding_website.Services;
 
 namespace wedding_website
@@ -10,7 +11,8 @@ namespace wedding_website
 
             builder.Services.AddRazorPages();
 
-            builder.Services.AddSingleton<IGuestService, GuestService>(); //Singleton, one single instance for the applications lifetime. List is not emptied every request
+            builder.Services.AddSingleton<IGuestService, GuestService>(); //Singleton, one single instance for the applications lifetime. List of guests is not emptied every request
+            builder.Services.AddScoped<IEventService, EventService>();
 
             var app = builder.Build();
 
@@ -29,6 +31,10 @@ namespace wedding_website
             app.MapStaticAssets();
             app.MapRazorPages()
                .WithStaticAssets();
+
+            var culture = new CultureInfo("en-GB");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
 
             app.Run();
         }
