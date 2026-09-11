@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model wedding_website.Pages.EditGuestModel
+@model wedding_website.Pages.Admin.EditGuestModel
 @{
     ViewData["Title"] = "Edit guest";
 }
@@ -47,7 +47,7 @@
                 </div>
 
                 <button type="submit" class="btn rsvp-button">Save changes</button>
-                <a asp-page="/Guests" class="btn btn-outline-secondary">Cancel</a>
+                <a asp-page="/Admin/Guests" class="btn btn-outline-secondary">Cancel</a>
             </form>
         </div>
     </div>

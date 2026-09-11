@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using wedding_website.Models;
 using wedding_website.Services;
 
-namespace wedding_website.Pages
+namespace wedding_website.Pages.Admin
 {
     public class GuestsModel : PageModel
     {

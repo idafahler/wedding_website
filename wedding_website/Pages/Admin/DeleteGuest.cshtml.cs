@@ -3,17 +3,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using wedding_website.Models;
 using wedding_website.Services;
 
-namespace wedding_website.Pages
+namespace wedding_website.Pages.Admin
 {
-    public class EditGuestModel : PageModel
+    public class DeleteGuestModel : PageModel
     {
         private readonly IGuestService _guestService;
-        public EditGuestModel(IGuestService guestService)
+        public DeleteGuestModel(IGuestService guestService)
         {
             _guestService = guestService;
         }
 
-        [BindProperty]
         public Guest Guest { get; set; }
 
         public IActionResult OnGet(int id)
@@ -26,11 +25,7 @@ namespace wedding_website.Pages
 
         public IActionResult OnPost(int id)
         {
-            if (!ModelState.IsValid)
-                return Page();
-
-            Guest.Id = id;
-            _guestService.UpdateGuest(Guest);
+            _guestService.DeleteGuest(id);
             return RedirectToPage("./Guests");
         }
     }

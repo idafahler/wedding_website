@@ -1,5 +1,5 @@
 ﻿@page
-@model wedding_website.Pages.GuestsModel
+@model wedding_website.Pages.Admin.GuestsModel
 @{
     ViewData["Title"] = "Guest list";
 }
@@ -26,8 +26,8 @@
                     <td>@(guest.Attendance ? "Yes" : "No")</td>
                     <td>@guest.Message</td>
                     <td>
-                        <a asp-page="/EditGuest" asp-route-id="@guest.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <a asp-page="/DeleteGuest" asp-route-id="@guest.Id" class="btn btn btn-outline-danger">Delete</a>
+                        <a asp-page="/Admin/EditGuest" asp-route-id="@guest.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a asp-page="/Admin/DeleteGuest" asp-route-id="@guest.Id" class="btn btn btn-outline-danger">Delete</a>
                     </td>
                 </tr>
             }
