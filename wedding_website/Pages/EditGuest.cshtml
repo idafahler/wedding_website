@@ -1,0 +1,54 @@
+﻿@page "{id:int}"
+@model wedding_website.Pages.EditGuestModel
+@{
+    ViewData["Title"] = "Edit guest";
+}
+
+<section class="section-background container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+
+            <h1 class="text-center">Edit guest</h1>
+
+            <form method="post">
+
+                <!--First name-->
+                <div class="mb-3">
+                    <label asp-for="@Model.Guest.FirstName" class="form-label"></label>
+                    <input asp-for="@Model.Guest.FirstName" class="form-control" />
+                    <span asp-validation-for="@Model.Guest.FirstName" class="text-danger"></span>
+                </div>
+                <!--Last name-->
+                <div class="mb-3">
+                    <label asp-for="@Model.Guest.LastName" class="form-label"></label>
+                    <input asp-for="@Model.Guest.LastName" class="form-control" />
+                    <span asp-validation-for="@Model.Guest.LastName" class="text-danger"></span>
+                </div>
+
+                <!--Email-->
+                <div class="mb-3">
+                    <label asp-for="@Model.Guest.Email" class="form-label"></label>
+                    <input asp-for="@Model.Guest.Email" class="form-control" type="email" />
+                    <span asp-validation-for="@Model.Guest.Email" class="text-danger"></span>
+                </div>
+
+                <!--Attendance-->
+                <div class="mb-3">
+                    <label asp-for="@Model.Guest.Attendance" class="form-label"></label>
+                    <input asp-for="@Model.Guest.Attendance" />
+                    <span asp-validation-for="@Model.Guest.Attendance" class="text-danger"></span>
+                </div>
+
+                <!--Message-->
+                <div class="mb-3">
+                    <label asp-for="@Model.Guest.Message" class="form-label"></label>
+                    <input asp-for="@Model.Guest.Message" class="form-control" />
+                    <span asp-validation-for="@Model.Guest.Message" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn rsvp-button">Save changes</button>
+                <a asp-page="/Guests" class="btn btn-outline-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</section>

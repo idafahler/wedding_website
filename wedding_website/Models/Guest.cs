@@ -26,7 +26,7 @@ namespace wedding_website.Models
         [Display(Name = "I will attend ")]
         public bool Attendance { get; set; }
 
-        [StringLength(500, ErrorMessage = "Message can be at most 500 characters.")]
+        [StringLength(100, ErrorMessage = "Message can be at most 100 characters.")]
         [Display(Name = "Message (optional)")]
         public string? Message { get; set; }
 

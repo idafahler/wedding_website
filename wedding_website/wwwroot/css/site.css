@@ -5,6 +5,7 @@
     --shadow-section: rgba(0,0,0,0.3);
     --link: #304936;
     --link-hover: #406048;
+    --white: #ffffff;
 }
 
 html {
@@ -62,6 +63,7 @@ body {
     max-width: 50rem;
     width: 100%;
     border-radius: 5px;
+    border: 3px solid var(--white);
 }
 
 .image-banner{
@@ -125,6 +127,19 @@ form{
 }
 
 .optional-message-guest{
+    overflow-wrap: break-word;
+}
+
+.guest-table{
+    table-layout: fixed;
+    width:100%;
+}
+
+.guest-table th.message-col{
+    width:35%;
+}
+
+.guest-table td{
     overflow-wrap: break-word;
 }
 

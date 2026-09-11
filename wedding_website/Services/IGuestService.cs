@@ -7,5 +7,7 @@ namespace wedding_website.Services
         void AddGuest(Guest guest);
         Guest[] GetAllGuests();
         Guest GetGuest(int id);
+        void UpdateGuest(Guest guest);
+        bool DeleteGuest(int id);
     }
 }

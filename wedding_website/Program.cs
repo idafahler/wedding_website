@@ -11,7 +11,7 @@ namespace wedding_website
 
             builder.Services.AddRazorPages();
 
-            builder.Services.AddSingleton<IGuestService, GuestService>(); //Singleton, one single instance for the applications lifetime. List of guests is not emptied every request
+            builder.Services.AddSingleton<IGuestService, GuestService>(); //Singleton, one single instance for the applications lifetime. List of _guests is not emptied every request
             builder.Services.AddScoped<IEventService, EventService>();
 
             var app = builder.Build();

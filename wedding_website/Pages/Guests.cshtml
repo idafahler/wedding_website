@@ -1,0 +1,36 @@
+﻿@page
+@model wedding_website.Pages.GuestsModel
+@{
+    ViewData["Title"] = "Guest list";
+}
+
+<section class="section-background text-center">
+    <h1>Guests</h1>
+
+    <table class="table table-striped table-hover guest-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Attending</th>
+                <th class="message-col">Message</th>
+                <th>Handle guest</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var guest in Model.Guests)
+            {
+                <tr>
+                    <td>@guest.FullName</td>
+                    <td>@guest.Email</td>
+                    <td>@(guest.Attendance ? "Yes" : "No")</td>
+                    <td>@guest.Message</td>
+                    <td>
+                        <a asp-page="/EditGuest" asp-route-id="@guest.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a asp-page="/DeleteGuest" asp-route-id="@guest.Id" class="btn btn btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
