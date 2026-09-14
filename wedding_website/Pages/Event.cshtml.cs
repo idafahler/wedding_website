@@ -12,7 +12,7 @@ namespace wedding_website.Pages
         {
             _eventService = eventService;
         }
-        public Event[] Events { get; set; }
+        public Event[] Events { get; set; } = [];
         public Event Ceremony => Events.First();
         public void OnGet()
         {

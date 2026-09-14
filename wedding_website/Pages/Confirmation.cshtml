@@ -1,6 +1,7 @@
 ﻿@page "{id:int}"
 @model wedding_website.Pages.ConfirmationModel
 @{
+    ViewData["Title"] = "Confirmation";
 }
 
 <section class="section-background text-center">
@@ -14,10 +15,10 @@
     {
         <h3>We're sorry you can't make it, but thank you for letting us know.</h3>
     }
-    <p class="text-under-title">Your response have been sent to Jane & Joe.</p>
+    <p class="text-under-title">Your response has been sent to Alice &amp; Bob.</p>
 
     <article class="text-section">
-        <h4><strong>Your response</strong></h4>
+        <h4>Your response</h4>
 
         <p>Name: @Model.Guest.FullName</p>
         <p>Email: @Model.Guest.Email</p>

@@ -5,7 +5,7 @@ namespace wedding_website.Models
 {
     public class Guest
     {
-        [BindNever] //Id is set in code-behind, not by user
+        [BindNever] //Id is set in service, not by the user
         public int Id { get; set; }
 
         [Required(ErrorMessage = "First name is required.")]

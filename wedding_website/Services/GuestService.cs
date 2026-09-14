@@ -25,11 +25,10 @@ namespace wedding_website.Services
 
         public void AddGuest(Guest guest)
         {
-            if (guest != null)
-            {
-                guest.Id = GetNextAvailableId();
-                _guests.Add(guest);
-            }
+            ArgumentNullException.ThrowIfNull(guest);
+
+            guest.Id = GetNextAvailableId();
+            _guests.Add(guest);
         }
 
         public Guest? GetGuest(int id)

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace wedding_website.Models
+﻿namespace wedding_website.Models
 {
     public class Event
     {
